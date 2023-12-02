@@ -16,17 +16,42 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestionIndex = 0;
     let userAnswers = [];
 
-    function displayQuestion() {
-        const question = quizQuestions[currentQuestionIndex];
-        const quizSection = document.getElementById('quiz-section');
-        quizSection.innerHTML = '<h2>' + question.question + '</h2>';
+function displayQuestion() {
+    const question = quizQuestions[currentQuestionIndex];
+    const quizSection = document.getElementById('quiz-section');
+    quizSection.innerHTML = `<h2>${question.question}</h2>`;
 
-        question.answers.forEach((answer, index) => {
-            const button = createAnswerElement(answer, currentQuestionIndex);
+    question.answers.forEach((answer) => {
+        const button = createAnswerElement(answer);
+        if (button instanceof Node) {
             quizSection.appendChild(button);
-        });
+        }
+    });
+}
 
-        // Add navigation buttons here later
+function createAnswerElement(answer) {
+    const button = document.createElement('button');
+    button.textContent = answer;
+    button.addEventListener('click', () => handleAnswerClick(answer));
+    return button;
+}
+
+function handleAnswerClick(answer) {
+    userAnswers[currentQuestionIndex] = answer;
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+        currentQuestionIndex++;
+        displayQuestion();
+    } else {
+        calculateResult();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayQuestion();
+});
+
+// ... rest of your script.js code ...
+
     }
 
     function calculateResult() {
@@ -40,7 +65,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     displayQuestion();
 });
-
-function createAnswerElement(answer, questionIndex) {
-    // Function to create HTML for an answer option
-}
