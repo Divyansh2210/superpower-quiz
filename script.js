@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function calculateResult() {
         const superpower = determineSuperpowerBasedOnAnswers(userAnswers);
         const resultSection = document.getElementById('result-section');
-        resultSection.innerHTML = `<h2>Your Superpower is: ${superpower}</h2>`;
+        resultSection.innerHTML = `<h2>Your Superpower is: ${superpower}</h2>
+                                    <p>You belong to the ${dominantCategory} category!</p>`;
         resultSection.style.display = 'block';
     }
 
@@ -129,7 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const dominantCategory = Object.keys(categoryCounts).reduce((a, b) => categoryCounts[a] > categoryCounts[b] ? a : b);
-        return mapCategoryToSuperpower(dominantCategory);
+        const superpower = mapCategoryToSuperpower(dominantCategory);
+        return { superpower, dominantCategory };
     }
 
     function mapCategoryToSuperpower(category) {
