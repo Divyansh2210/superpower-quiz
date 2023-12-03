@@ -69,5 +69,18 @@ footer {
     header p, button {
         font-size: 0.9em;
     }
+.social-share a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #55acee; /* Twitter blue, adjust for other platforms */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    }
+
+.social-share a:hover {
+    background-color: #3b88c3;
+    }
 }
 
