@@ -73,13 +73,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function calculateResult() {
-        const superpower = determineSuperpowerBasedOnAnswers(userAnswers);
-        const resultSection = document.getElementById('result-section');
-        resultSection.innerHTML = `<h2>Your Superpower is: ${superpower}</h2>
-                                    <p>You belong to the ${dominantCategory} category!</p>`;
-        resultSection.style.display = 'block';
-    }
+function calculateResult() {
+    const { superpower, dominantCategory } = determineSuperpowerBasedOnAnswers(userAnswers);
+    const resultSection = document.getElementById('result-section');
+    const shareMessage = `My superpower is ${superpower} in the ${dominantCategory} category! Discover your superpower at [YourQuizURL]. #WhatsYourSuperpower`;
+    const encodedShareMessage = encodeURIComponent(shareMessage);
+
+    resultSection.innerHTML = `
+        <h2>Your Superpower is: ${superpower}</h2>
+        <p>You belong to the ${dominantCategory} category!</p>
+        <div class="social-share">
+            <a href="https://twitter.com/intent/tweet?text=${encodedShareMessage}" target="_blank">Share on Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=[YourQuizURL]&quote=${encodedShareMessage}" target="_blank">Share on Facebook</a>
+            <!-- Add other social media links as needed -->
+        </div>
+    `;
+    resultSection.style.display = 'block';
+}
 
     function determineSuperpowerBasedOnAnswers(answers) {
         const categoryCounts = { Adventurous: 0, Humorous: 0, Intellectual: 0, Creative: 0 };
