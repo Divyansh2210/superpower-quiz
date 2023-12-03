@@ -85,48 +85,44 @@ document.addEventListener('DOMContentLoaded', () => {
         answers.forEach(answer => {
             switch (answer) {
                 case "Glazed donut":
-                case "Leftover pizza":
                 case "The Macarena":
+                case "Laugh-out-loud comedy":
+                case "A fire-breathing dragon":
+                case "A mischievous fairy":
+                case "Neon pink":
                 case "A wise-cracking ghost":
                     categoryCounts.Humorous++;
                     break;
                 case "Spicy taco":
-                case "A luxury moon resort":
                 case "The Moonwalk":
+                case "Action-packed superhero flick":
+                case "Electric blue":
                 case "A talking cat with attitude":
+                case "Befriend the aliens with snacks":
+                case "Assemble a team of heroes":
                     categoryCounts.Adventurous++;
                     break;
                 case "Green smoothie":
-                case "A deep-sea underwater hotel":
                 case "I’m more of a sit-and-nod person":
-                case "A loyal robot butler":
+                case "World peace, but with a twist":
+                case "Mind-bending sci-fi":
+                case "Invisible":
+                case "The ability to fly":
+                case "A time-traveling spaceship":
                     categoryCounts.Intellectual++;
                     break;
+                case "Leftover pizza":
+                case "A deep-sea underwater hotel":
                 case "A mysterious, uncharted island":
-                case "The Robot":
                 case "Build an epic blanket fort":
                 case "Start an indoor treasure hunt":
-                case "A fire-breathing dragon":
-                case "A unicorn with rainbow powers":
-                case "A shape-shifting werewolf":
-                case "A mischievous fairy":
-                case "Infinite pizza":
-                case "The ability to fly":
-                case "World peace, but with a twist":
-                case "A time-traveling spaceship":
-                case "Action-packed superhero flick":
-                case "Laugh-out-loud comedy":
-                case "Spine-chilling horror":
-                case "Mind-bending sci-fi":
-                case "Neon pink":
-                case "Electric blue":
-                case "Invisible":
+                case "A medieval castle with WiFi":
                 case "Rainbow glitter":
-                case "Befriend the aliens with snacks":
                 case "Use my wit and cunning":
-                case "Assemble a team of heroes":
                 case "Hide and hope for the best":
                 case "I work alone":
+                case "A unicorn with rainbow powers":
+                case "A shape-shifting werewolf":
                     categoryCounts.Creative++;
                     break;
             }
