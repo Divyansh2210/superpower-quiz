@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             question: "What's your ideal sidekick?",
             answers: ["A talking cat with attitude", "A loyal robot butler", "A wise-cracking ghost", "I work alone"]
-        }
+        }]
     const startQuizBtn = document.getElementById('start-quiz-btn');
     const welcomeSection = document.getElementById('welcome-section');
     const quizSection = document.getElementById('quiz-section');
