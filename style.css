@@ -1,8 +1,7 @@
-
 /* style.css */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
@@ -31,6 +30,28 @@ header p {
 main {
     flex: 1;
     padding: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #007B9A;
+}
+
+#result-section {
+    display: none; /* Hidden initially */
+    padding: 20px;
+    text-align: center;
 }
 
 footer {
@@ -40,18 +61,13 @@ footer {
     padding: 10px 0;
 }
 
-#result-section {
-    text-align: center;
-    padding: 20px;
-    display: none; /* Initially hidden */
-}
-
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media (max-width: 600px) {
     header h1 {
         font-size: 2em;
     }
-    header p {
-        font-size: 1em;
+    header p, button {
+        font-size: 0.9em;
     }
 }
+
