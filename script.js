@@ -162,6 +162,15 @@ function calculateResult() {
 
         return superpowers[category] || "Mystery Power (Discover Yourself!)";
     }
+    function displayResultsPopup(superpower, category) {
+        document.getElementById('superpower-result').textContent = superpower;
+        document.getElementById('category-result').textContent = category;
+        document.getElementById('result-popup').style.display = 'flex';
+    }
+    function closePopup() {
+        document.getElementById('result-popup').style.display = 'none';
+    }
+    document.getElementById('close-popup').addEventListener('click', closePopup);
 
     displayQuestion();
 });
